@@ -14,7 +14,7 @@
   </head>
 
   <body>
-    <div class="container mb-3">
+    <div class="container mb-3 mt-3">
       <h1><%- title %></h1>
 
       <form action="/add" method="post">
@@ -41,18 +41,18 @@
             <th>#</th>
             <th>Title</th>
             <th>Description</th>
-            <th>Operations</th>
+            <th>Operation</th>
           </tr>
         </thead>
         <tbody>
           <% for (var i=0 ; i < tasks.length; i++) {%>
           <tr>
-            <td><%-i+1%></td>
-            <td>
+            <td class="col"><%-i+1%></td>
+            <td class="col">
               <strong> <%- tasks[i].title %> </strong>
             </td>
             <td><%- tasks[i].description %></td>
-            <td>
+            <td class="col">
               <a
                 class="<%- tasks[i].status ? 'btn btn-success': 'btn btn-dark' %>"
                 href="/turn/<%- tasks[i]._id %>"
